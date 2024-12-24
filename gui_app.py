@@ -103,10 +103,7 @@ class FaceFilterApp:
         self.progress_bar.grid_remove()  # hidden by default
 
     def select_input_folder(self):
-        folder_selected = filedialog.askdirectory(
-            title="Select the folder with input photos",
-            initialdir=os.path.expanduser("~/Downloads")  # Default to Downloads
-        )
+        folder_selected = filedialog.askdirectory(title="Select the folder with input photos")
         if folder_selected:
             self.source_folder = folder_selected
             self.label_folder.config(text=os.path.basename(folder_selected), fg="black")
@@ -114,7 +111,6 @@ class FaceFilterApp:
     def select_face_image(self):
         file_selected = filedialog.askopenfilename(
             title="Select the face photo",
-            initialdir=os.path.expanduser("~/Downloads"),  # Default to Downloads
             filetypes=[("Image Files", "*.jpg *.jpeg *.png")]
         )
         if file_selected:
@@ -169,7 +165,6 @@ class FaceFilterApp:
             title="Save matched images as ZIP",
             defaultextension=".zip",
             filetypes=[("Zip Files", "*.zip")],
-            initialdir=os.path.expanduser("~/Downloads"),  # Default to Downloads
             initialfile="output.zip"
         )
         if not save_zip_path:
