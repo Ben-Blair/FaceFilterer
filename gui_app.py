@@ -173,7 +173,7 @@ class FaceFilterApp:
         # This label will show either the reference face or real-time matched face
         self.face_preview_label = tk.Label(
             right_frame, 
-            text="Drag & drop a folder here\nOR\nUse 'Select Input Folder'",
+            text="Drag & Drop Folder here\nOR\nUse 'Select Input Folder'",
             bg="white"
         )
         self.face_preview_label.pack(expand=True)  # center it if bigger space
